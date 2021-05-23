@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>preshepka</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+  <header>
+      <h2>Home page</h2>
+      {% if user.is_authenticated %}
+        <p>Привет {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">Выход</a></p>
+      {% else %}
+        <p>Зарегистрируйтесь</p>
+        <a href="{% url 'login' %}">login in</a><br><br>
+      {% endif %}
+    <a href="{% url 'home' %}">Домой</a> | <a href="{% url 'about' %}">О нас</a> | <a href="{% url 'post_new' %}">Добавить услугу</a>
+  </header>
+  <div class="conteiner">
+  {% block context %}
+  {% endblock %}
+  </div>
+</body>
+</html>
