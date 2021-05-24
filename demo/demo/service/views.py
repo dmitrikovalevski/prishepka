@@ -12,7 +12,6 @@ from django.urls import reverse_lazy
 from .models import Service
 
 
-
 class ServiceListView(ListView):
     model = Service
     template_name = 'service/home.html'

@@ -11,10 +11,13 @@
       <h2>Home page</h2>
       {% if user.is_authenticated %}
         <p>Привет {{ user.username }}!</p>
+            {% csrf_token %}
         <p><a href="{% url 'logout' %}">Выход</a></p>
       {% else %}
-        <p>Зарегистрируйтесь</p>
-        <a href="{% url 'login' %}">login in</a><br><br>
+        <p>Войдите в аккаунт</p>
+        <a href="{% url 'login' %}">login in</a>
+        <a href="{% url 'signup' %}">Регистрация</a>
+      <br><br>
       {% endif %}
     <a href="{% url 'home' %}">Домой</a> | <a href="{% url 'about' %}">О нас</a> | <a href="{% url 'post_new' %}">Добавить услугу</a>
   </header>
