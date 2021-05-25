@@ -6,7 +6,7 @@
   <p>{{ service.name }}</p>
   <p>{{ service.description }}</p>
   <p>{{ service.price }}</p>
-  <p>{{ service.pub_date }}</p>
+  <p><img src="{{ service.photo.url }}"></p>
 </div>
   <a href="{% url 'post_edit' service.pk %}">Редактировать</a>
   <a href="{% url 'post_delete' service.pk %}">Удалить</a>
