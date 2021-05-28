@@ -37,3 +37,4 @@ urlpatterns = [
     # path('users/', include('django.contrib.auth.urls')),
     # path('service/', include('service.urls')),
 ]
+

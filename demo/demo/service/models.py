@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from django.core.files.storage import FileSystemStorage
+
 
 class Service(models.Model):
     name = models.CharField('Название услуги', max_length=200)
