@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ service.title }}{% endblock %}
+
+{% block content %}
+    <p>{{ service.title }}</p>
+    <p>{{ service.description }}</p>
+    <p>{{ service.price }}</p>
+    <p>{{ service.date_created }}</p>
+    <a class="btn btn-primary" href="{% url 'edit' service.pk %}" role="button">Редактировать</a>
+    <a class="btn btn-primary" href="{% url 'delete' service.pk %}" role="button">Удалить</a>
+{% endblock %}
