@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}User profile{% endblock %}
 
 {% block content %}
     <h2>Hello {{ request.user }}</h2>
+    {% if request.user.useraccount.picture %}
+    <img src="{{ request.user.useraccount.picture.url }}" height="200">
+    {% else %}
+    <img src="{% static 'image/user1.png' %} " height="200">
+    {% endif %}
 {% endblock %}

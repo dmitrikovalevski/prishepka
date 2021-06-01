@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from .models import Service
 # Форма модели для добавления и редактирования
 from .froms import ServiceForm
+# Декораторы
+from users.decorators import for_group_only, admin_only
 
 
 def home(request):
@@ -26,6 +28,7 @@ def view_service(request, pk):
     return render(request, 'service/view_service.html', context)
 
 
+@for_group_only(group_list=['user', 'admin'])
 def add_service(request):
     # Получаем форму модели для заполнения
     new_service = ServiceForm()
@@ -45,6 +48,7 @@ def add_service(request):
     return render(request, 'service/add.html', context)
 
 
+@for_group_only(group_list=['user', 'admin'])
 def edit_service(request, pk):
     # Получаем услугу по ID
     get_service = Service.objects.get(pk=pk)
@@ -65,6 +69,7 @@ def edit_service(request, pk):
     return render(request, 'service/edit.html', context)
 
 
+@admin_only
 def delete_service(request, pk):
     get_service = Service.objects.get(pk=pk)
     get_service.delete()

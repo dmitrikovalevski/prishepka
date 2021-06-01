@@ -128,6 +128,9 @@ STATICFILES_DIRS = [
     BASE_DIR.joinpath('static'),
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -135,4 +138,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Добавим приложение в список приложений
 # Добавим папку templates на уровне проекта
-# егистрируем папку static
+# Регистрируем папку static
+# Регистрируем папку медиаю Так же в urls.py приложения нужно указать путь к картинкам

@@ -6,12 +6,16 @@ from .forms import NewUserForm
 from django.contrib import messages
 # "Ключи" для аутентификации, входа в систему, выхода из системы
 from django.contrib.auth import authenticate, login, logout
-
+# Декораторы
+from .decorators import unauthenticated_user, for_group_only
+# Гпуппы. Необходимы для автоматического добавления пользователя в группу при регистрации
+from django.contrib.auth.models import Group
 
 def user_account(request):
     return render(request, 'users/profile.html')
 
 
+@unauthenticated_user
 def create_user(request):
     # Выведем на экран форму для заполнения регистрации пользователя
     new_user = NewUserForm()
@@ -22,7 +26,11 @@ def create_user(request):
         # Прверка на валидность формы.
         if new_user.is_valid():
             # Если форма корректна, тогда сохраним её
-            new_user.save()
+            user = new_user.save()
+            # Получим группу из спика доступных групп из админки
+            group = Group.objects.get(name='user')
+            # Добавим группу пользователю
+            user.groups.add(group)
             # Так же после успешной регситрации сработает наше одноразовое сообщение.
             # Его можно передать в любой шалон. В данном случае после регистрации мы перейдём
             # на страницу входа и там, ниже мы увидим данное сообщение.
@@ -39,6 +47,7 @@ def create_user(request):
     return render(request, 'users/registration.html', context)
 
 
+@unauthenticated_user
 def login_user(request):
     # Метод пост отправляет данные из формы с шаблона сайта
     if request.method == 'POST':
