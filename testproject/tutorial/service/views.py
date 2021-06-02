@@ -6,11 +6,11 @@ from .models import Service
 from .froms import ServiceForm
 # Декораторы
 from users.decorators import for_group_only, admin_only
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    # Строим очередь из объектов
-    service = Service.objects.order_by()
+    service = Service.objects.order_by('-date_created')
     # Добавляем очередь в контекст и выводим в шаблоне
     context = {
         'all_services': service
@@ -35,11 +35,13 @@ def add_service(request):
     # Проверяем метод отправки из формы
     if request.method == 'POST':
         # Если метод ПОСТ то передадим полученые результаты в форму модели
-        new_service = ServiceForm(request.POST)
+        new_service = ServiceForm(request.POST, request.FILES)
         # Проверка на валидность\правильность заполнения
         if new_service.is_valid():
             # Если всё верно сохраняем форму
-            new_service.save()
+            service = new_service.save()
+            service.user = request.user
+            service.save()
             # Переходим на указанную страницу
             return redirect('/')
     context = {
@@ -59,7 +61,7 @@ def edit_service(request, pk):
         # Если метод ПОСТ тогда добавим в фому результат.
         # instance=get_service сравнивает полученную модель по ID с редактируемыми полями.
         # Это необходимо для редактирования модели.
-        edit_form = ServiceForm(request.POST, instance=get_service)
+        edit_form = ServiceForm(request.POST, request.FILES, instance=get_service)
         if edit_form.is_valid():
             edit_form.save()
             return redirect('home')

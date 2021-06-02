@@ -7,7 +7,7 @@ class UserAccount(models.Model):
     picture = models.ImageField(upload_to='profile', null=True, blank=True)
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
     def delete(self, *args, **kwargs):
         self.picture.delete()

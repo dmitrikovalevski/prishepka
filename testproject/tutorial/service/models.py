@@ -7,7 +7,9 @@ class Service(models.Model):
     description = models.TextField('Подробное описание', null=True)
     price = models.FloatField('Цена услуги', null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
+    picture = models.ImageField(upload_to='service', null=True, blank=True)
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
+
