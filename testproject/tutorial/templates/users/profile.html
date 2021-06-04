@@ -9,7 +9,8 @@
     {% else %}
     <img src="{% static 'image/user1.png' %} " height="200">
     {% endif %}
-    <p><a href="{% url 'update' %}" class="btn btn-primary mt-2">Редактировать</a></p>
+    <p><a href="{% url 'update' %}" class="btn btn-primary mt-2">Редактировать</a>
+    <a href="{% url 'password_reset' %}" class="btn btn-primary mt-2">Сменить пароль</a></p>
     {% for service in all_services %}
         <div class="container">
             <div class="card-body">

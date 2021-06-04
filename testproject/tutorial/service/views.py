@@ -6,6 +6,7 @@ from .models import Service
 from .froms import ServiceForm
 # Декораторы
 from users.decorators import for_group_only, admin_only
+# Декоратор, который перенаправит пользователя на указанную страницу по имени пути
 from django.contrib.auth.decorators import login_required
 
 

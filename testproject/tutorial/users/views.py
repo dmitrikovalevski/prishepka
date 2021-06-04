@@ -12,6 +12,8 @@ from .decorators import unauthenticated_user, for_group_only
 from django.contrib.auth.models import Group
 # Для зависимости с картинкой
 from .models import UserAccount
+# Класс для смены пароля. Посленяя страница.
+from django.contrib.auth.views import PasswordResetCompleteView
 
 
 @for_group_only(group_list=['user'])
@@ -108,3 +110,7 @@ def update_account(request):
         'form': form,
     }
     return render(request, 'users/update.html', context)
+
+
+class ChangePasswordP4(PasswordResetCompleteView):
+    template_name = 'users/password_reset_complete.html'
