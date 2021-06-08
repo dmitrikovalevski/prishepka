@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body>
+    <header>
+    {% if request.user %}
+    <h2><a href="{% url 'home' %}">Home page</a></h2>
+    <h2>{{ request.user.username }}</h2>
+    {% endif %}
+    <a href="{% url 'add_user' %}">create user</a> |
+    <a href="{% url 'login' %}">LogIn</a> |
+    <a href="{% url 'logout' %}">logOut</a> |
+    <a href="{% url 'add_service' %}">+service</a>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

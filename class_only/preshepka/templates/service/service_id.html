@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ service.title }}{% endblock %}
+
+{% block content %}
+    <div>
+        <p>{{ service.title }}</p>
+        {% if service.picture %}
+        <p><img src="{{ service.picture.url }}" height="200"></p>
+        {% endif %}
+        <p>{{ service.descriptions }}</p>
+        <p>{{ service.price }}</p>
+        <p>{{ service.date_created }}</p>
+        <p>{{ service.user }}</p>
+    </div>
+{% endblock %}
