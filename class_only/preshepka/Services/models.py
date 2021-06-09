@@ -8,7 +8,7 @@ class Service(models.Model):
     descriptions = models.TextField()
     price = models.PositiveIntegerField()
     date_created = models.DateTimeField(auto_now=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title

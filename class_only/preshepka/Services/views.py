@@ -2,7 +2,9 @@ from .models import Service
 from .forms import ServiceForm
 from django.urls import reverse
 from django.shortcuts import redirect
-from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from django.views.generic import (TemplateView, ListView, DetailView,
+                                  CreateView, UpdateView, DeleteView,
+                                  )
 
 
 class HomeTemplateView(TemplateView):
@@ -37,6 +39,20 @@ class ServiceCreateView(CreateView):
         return redirect(self.get_success_url())
 
 
+class ServiceUpdateView(UpdateView):
+    model = Service
+    fields = ['picture', 'title', 'descriptions', 'price']
+    template_name = 'service/update_service.html'
+
+    def get_success_url(self):
+        return reverse('detail', kwargs={'pk': self.object.pk})
 
 
+class ServiceDeleteView(DeleteView):
+    model = Service
+    template_name = 'service/delete_service.html'
+    success_url = 'home'
+
+    def get_success_url(self):
+        return reverse('home')
 
