@@ -13,3 +13,10 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 
+
+class Comments(models.Model):
+    comment = models.TextField()
+    date_created = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True)
+    
