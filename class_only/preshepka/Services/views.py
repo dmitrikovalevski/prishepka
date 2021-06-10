@@ -1,12 +1,8 @@
 from .models import Service, Comments
-from .forms import ServiceForm
-# ---- prints
-from django.db import models
-from django.http import HttpResponse, HttpResponseNotAllowed, Http404
-from django.core.exceptions import ImproperlyConfigured
-# ---- end print
+from .forms import CommentsForm
 from django.urls import reverse
 from django.shortcuts import redirect
+from django.views.generic.edit import FormMixin
 from django.views.generic import (TemplateView, ListView, DetailView,
                                   CreateView, UpdateView, DeleteView,
                                   )
@@ -23,10 +19,13 @@ class ServiceListView(ListView):
 
 
 # --- Сервис и комментарии к нему.
-class ServiceDetailView(DetailView):
+class ServiceDetailView(DetailView, FormMixin):
     model = Service
     context_object_name = 'service'
     template_name = 'service/service_id.html'
+    form_class = CommentsForm
+
+
 
 
 class ServiceCreateView(CreateView):
