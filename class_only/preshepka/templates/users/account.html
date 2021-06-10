@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% block title %}Account{% endblock %}
+{% block title %}Account {{ request.user.username }}{% endblock %}
 
 {% block content %}
-<h2>User account</h2>
+<h2>{{ request.user.username }}</h2>
 {% endblock %}
