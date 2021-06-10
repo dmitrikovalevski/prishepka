@@ -1,5 +1,10 @@
-from .models import Service
+from .models import Service, Comments
 from .forms import ServiceForm
+# ---- prints
+from django.db import models
+from django.http import HttpResponse, HttpResponseNotAllowed, Http404
+from django.core.exceptions import ImproperlyConfigured
+# ---- end print
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.views.generic import (TemplateView, ListView, DetailView,
@@ -17,6 +22,7 @@ class ServiceListView(ListView):
     template_name = 'service/all_services.html'
 
 
+# --- Сервис и комментарии к нему.
 class ServiceDetailView(DetailView):
     model = Service
     context_object_name = 'service'
@@ -55,4 +61,5 @@ class ServiceDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('home')
+
 

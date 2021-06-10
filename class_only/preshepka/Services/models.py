@@ -19,4 +19,6 @@ class Comments(models.Model):
     date_created = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True)
-    
+
+    def __str__(self):
+        return self.comment
