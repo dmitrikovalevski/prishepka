@@ -1,8 +1,10 @@
 from .models import Service, Comments
 from .forms import CommentsForm
+from django.contrib.auth.models import User
+
 from django.urls import reverse
 from django.shortcuts import redirect
-from django.views.generic.edit import FormMixin
+from django.views.generic.edit import FormView
 from django.views.generic import (TemplateView, ListView, DetailView,
                                   CreateView, UpdateView, DeleteView,
                                   )
@@ -19,13 +21,14 @@ class ServiceListView(ListView):
 
 
 # --- Сервис и комментарии к нему.
-class ServiceDetailView(DetailView, FormMixin):
+class ServiceDetailView(DetailView, FormView):
     model = Service
     context_object_name = 'service'
     template_name = 'service/service_id.html'
     form_class = CommentsForm
 
-
+    def get_success_url(self):
+        return reverse('detail', kwargs={'pk': self.kwargs['pk']})
 
 
 class ServiceCreateView(CreateView):

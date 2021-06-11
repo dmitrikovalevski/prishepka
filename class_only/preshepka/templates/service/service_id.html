@@ -26,6 +26,10 @@
         {% endfor %}
     </div>
     <div>
-        {{ form.as_p }}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.comment.label }}{{ form.comment }}
+            <input type="submit" value="add comment">
+        </form>
     </div>
 {% endblock %}
