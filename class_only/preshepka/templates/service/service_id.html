@@ -28,7 +28,7 @@
     <div>
         <form method="POST">
             {% csrf_token %}
-            {{ form.comment.label }}{{ form.comment }}
+            {{ form.as_p }}
             <input type="submit" value="add comment">
         </form>
     </div>
