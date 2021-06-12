@@ -1,12 +1,10 @@
 from .models import Service, Comments
-from .forms import ServiceForm
-# ---- prints
-from django.db import models
-from django.http import HttpResponse, HttpResponseNotAllowed, Http404
-from django.core.exceptions import ImproperlyConfigured
-# ---- end print
+from .forms import CommentsForm
+from django.contrib.auth.models import User
+
 from django.urls import reverse
 from django.shortcuts import redirect
+from django.views.generic.edit import FormView, FormMixin
 from django.views.generic import (TemplateView, ListView, DetailView,
                                   CreateView, UpdateView, DeleteView,
                                   )
@@ -22,11 +20,22 @@ class ServiceListView(ListView):
     template_name = 'service/all_services.html'
 
 
-# --- Сервис и комментарии к нему.
-class ServiceDetailView(DetailView):
+class ServiceDetailView(DetailView, CreateView):
     model = Service
     context_object_name = 'service'
     template_name = 'service/service_id.html'
+    form_class = CommentsForm
+
+    def form_valid(self, form):
+        comment = form.save()
+        if self.request.user.is_authenticated:
+            comment.user = self.request.user
+            comment.service = Service.objects.get(pk=self.kwargs['pk'])
+            comment.save()
+        return self.get_success_url()
+
+    def get_success_url(self):
+        return redirect('detail', self.kwargs['pk'])
 
 
 class ServiceCreateView(CreateView):
@@ -61,5 +70,3 @@ class ServiceDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('home')
-
-
