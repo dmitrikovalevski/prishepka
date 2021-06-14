@@ -9,6 +9,7 @@ class Service(models.Model):
     price = models.PositiveIntegerField()
     date_created = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title
