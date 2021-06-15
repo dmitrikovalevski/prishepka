@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Create user{% endblock %}
+{% block title %}Регистрация{% endblock %}
 
 {% block content %}
-<div class="container "
-<h2>Create User</h2>
-<form method="post">
-    {% csrf_token %}
-    <p><img src="{% static 'image/user1.png' %}" height="36">{{ form.username }}</p>
-    <p><img src="{% static 'image/email.png' %}" height="36">{{ form.email }}</p>
-    <p><img src="{% static 'image/password.png' %}" height="30">{{ form.password1 }}</p>
-    <p><img src="{% static 'image/password.png' %}" height="30">{{ form.password2 }}</p>
-    <input type="submit" value="Create user">
-</form>
+    <center>
+        <p><h2>Регистрация пользователя</h2></p>
+        <form method="POST">
+        {% csrf_token %}
+            <p><img src="{% static 'image/user.png' %}" height="30"> {{ form.username }}</p>
+            <p><img src="{% static 'image/email.png' %}" height="30"> {{ form.email }}</p>
+            <p><img src="{% static 'image/password.png' %}" height="30"> {{ form.password1 }}</p>
+            <p><img src="{% static 'image/password.png' %}" height="30"> {{ form.password2 }}</p>
+            <input type="submit" value="Зарегистрировать">
+        </form>
+    </center>
 {% endblock %}
+
+

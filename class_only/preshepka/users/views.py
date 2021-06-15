@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordResetView,\
     PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
 from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, ListView, UpdateView
 from .forms import CreateUserForm
 
 
@@ -26,6 +26,10 @@ class UserLogOut(LogoutView):
 class UserAccountListView(ListView):
     model = User
     template_name = 'users/account.html'
+
+
+class UserAccountUpdate(UpdateView):
+    pass
 
 
 # reset password

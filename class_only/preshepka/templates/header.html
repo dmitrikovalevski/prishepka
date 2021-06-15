@@ -16,10 +16,14 @@
 
     </div>
     <div class="container mt-2 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-      <h4>{{ request.user.username }}</h4>
+      <h4><a class="nav-link px-2 link-dark" href="{% url 'account' %}">Привет {{ request.user.username }}</a></h4>
     </div>
       {% if not request.user.is_authenticated %}
-          <img src="{% static 'image/user.png'%}" class="rounded-circle" height="42">
+          <img src="" class="rounded-circle" height="42">
+      {% elif not request.user.userinfo.image %}
+         <a href="{% url 'account' %}" class="d-block link-dark">
+           <img src="{% static 'image/user.png' %}" class="rounded-circle" height="42">
+         <a href="{% url 'logout' %}" class="nav-link px-4 link-dark">Выход</a>
       {% else %}
          <a href="{% url 'account' %}" class="d-block link-dark">
            <img src="{{ request.user.userinfo.image.url }}" class="rounded-circle" height="42">
@@ -29,12 +33,3 @@
   </div>
 </div>
 <hr>
-<!--    {% if request.user %}-->
-<!--    <h2><a href="{% url 'home' %}">Home page</a></h2>-->
-<!--    <h2><a href="{% url 'account' %}">{{ request.user.username }}</a></h2>-->
-<!--    {% endif %}-->
-<!--    <a href="{% url 'add_user' %}">create user</a> |-->
-<!--    <a href="{% url 'login' %}">LogIn</a> |-->
-<!--    <a href="{% url 'logout' %}">logOut</a> |-->
-<!--    <a href="{% url 'add_service' %}">+service</a> |-->
-<!--    <a href="{% url 'forgot' %}">Change password</a>-->

@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6d997c-ad18-4e01-97aa-acf6acb120a8" name="Default Changelist" comment="Всё работает. Хочу поменять поле зависимости с OneToOne на ForiengKey">
-      <change afterPath="$PROJECT_DIR$/media/service/511SKDnmulL._SX322_BO1204203200_.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/mal.2pBM3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/multimodalnaya-perevozka-gruza.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/Автомобильные-перевозки.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_complete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/all_services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/all_services.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/service_id.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/service_id.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/users/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
