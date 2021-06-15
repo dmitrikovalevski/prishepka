@@ -3,20 +3,26 @@
 {% block title %}{{ service.title }}{% endblock %}
 
 {% block content %}
-    <div>
-        <p>{{ service.title }}</p>
+    <div class="position-relative">
+        <div class="position-absolute top-0 start-100 translate-middle">
         {% if service.picture %}
-        <p><img src="{{ service.picture.url }}" height="200"></p>
+        <img src="{{ service.picture.url }}" class="rounded" height="200">
         {% endif %}
+        </div>
+        <div class="container">
+        <p>{{ service.title }}</p>
         <p>{{ service.descriptions }}</p>
         <p>{{ service.price }}</p>
         <p>{{ service.date_created }}</p>
         <p>{{ service.user }}</p>
         <p>----------{{ count }}</p>
+        </div>
+    </div>
+    <div class="container">
         <a href="{% url 'update' service.pk %}">Update</a> |
         <a href="{% url 'delete' service.pk %}">Delete</a>
     </div>
-    <div>
+    <div class="container">
         {% for comm in service.comments_set.all %}
         <div>
             <p>{{ comm.comment }}</p>
@@ -26,7 +32,7 @@
         <br>
         {% endfor %}
     </div>
-    <div>
+    <div class="container">
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
