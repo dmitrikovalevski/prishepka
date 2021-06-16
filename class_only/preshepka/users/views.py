@@ -1,10 +1,12 @@
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.models import User
-from django.contrib.auth.views import PasswordResetView,\
+from django.contrib.auth.views import PasswordResetView, \
     PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
 from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import CreateView, ListView, UpdateView
-from .forms import CreateUserForm
+from django.views.generic import CreateView, ListView, UpdateView, DetailView, FormView
+from .forms import CreateUserForm, UserAccountUpdateForm
+from .models import UserInfo
+from django.shortcuts import redirect, render
 
 
 class UserFormView(CreateView):
@@ -23,13 +25,25 @@ class UserLogOut(LogoutView):
     pass
 
 
-class UserAccountListView(ListView):
+class UserAccountView(DetailView):
     model = User
-    template_name = 'users/account.html'
+    template_name = 'users/account_detail.html'
 
 
-class UserAccountUpdate(UpdateView):
-    pass
+def update_user_account(request):
+    if request.method == 'POST':
+        form = UserAccountUpdateForm(request.POST, request.FILES, instance=request.user.userinfo)
+        if form.is_valid():
+            form = form.save()
+            form.user = request.user
+            form.save()
+            return redirect('account', request.user.id)
+    else:
+        form = UserAccountUpdateForm(instance=request.user.userinfo)
+    context = {
+        'form': form
+    }
+    return render(request, 'users/account_update.html', context)
 
 
 # reset password
@@ -47,6 +61,3 @@ class PasswordResetDone(PasswordResetDoneView):
 
 class PasswordResetComplete(PasswordResetCompleteView):
     pass
-
-
-
