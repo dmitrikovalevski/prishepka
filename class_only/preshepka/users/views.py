@@ -13,12 +13,18 @@ class UserFormView(CreateView):
     form_class = CreateUserForm
     template_name = 'users/add.html'
 
+    # add user for group
     def form_valid(self, form):
         user = form.save()
-        group = Group.objects.create(name='user')
-        user.groups.add(group)
-        user.save()
-        return super().form_valid(form)
+        if Group.objects.get(name='user'):
+            user.groups.add(Group.objects.get(name='user').pk)
+            user.save()
+            return super().form_valid(form)
+        else:
+            group = Group.objects.create(name='user')
+            user.groups.add(group)
+            user.save()
+            return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('home')
@@ -38,6 +44,7 @@ class UserAccountView(DetailView):
 
 
 def update_user_account(request):
+    # update user profile
     if request.method == 'POST':
         form = UserAccountUpdateForm(request.POST, request.FILES,
                                      instance=request.user.userinfo)
