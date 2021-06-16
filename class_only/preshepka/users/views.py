@@ -1,17 +1,24 @@
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.models import User
-from django.contrib.auth.views import PasswordResetView, \
-    PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, FormView
 from .forms import CreateUserForm, UserAccountUpdateForm
 from .models import UserInfo
 from django.shortcuts import redirect, render
+from django.contrib.auth.models import Group
 
 
 class UserFormView(CreateView):
     form_class = CreateUserForm
     template_name = 'users/add.html'
+
+    def form_valid(self, form):
+        user = form.save()
+        group = Group.objects.create(name='user')
+        user.groups.add(group)
+        user.save()
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('home')
@@ -32,7 +39,8 @@ class UserAccountView(DetailView):
 
 def update_user_account(request):
     if request.method == 'POST':
-        form = UserAccountUpdateForm(request.POST, request.FILES, instance=request.user.userinfo)
+        form = UserAccountUpdateForm(request.POST, request.FILES,
+                                     instance=request.user.userinfo)
         if form.is_valid():
             form = form.save()
             form.user = request.user
