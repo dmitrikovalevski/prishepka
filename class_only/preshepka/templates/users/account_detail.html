@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Account {{ user.username }}{% endblock %}
 
 {% block content %}
+<div class="container">
 <h2>{{ user.username }}</h2>
     {% if user.userinfo.image %}
     <img src="{{ user.userinfo.image.url }}" height="150"><br>
+    {% else %}
+    <img src="{% static 'image/user1.png' %}" height="150"><br>
     {% endif %}
+    {% if user.userinfo.phone %}
     {{ user.userinfo.phone }}<br>
+    {% endif %}
     {{ user.email }}
-    <p><a type="button" class="btn btn-secondary" href="{% url 'account_update' %}">Редактировать</a></p>
+    <p><a type="button" class="btn btn-secondary mt-2" href="{% url 'account_update' %}">Редактировать</a></p>
+</div>
 {% endblock %}

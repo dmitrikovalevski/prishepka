@@ -15,28 +15,30 @@
         <p>{{ service.price }}</p>
         <p>{{ service.date_created }}</p>
         <p>{{ service.user }}</p>
-        <p>----------{{ count }}</p>
+        {% if service.rubric %}
+        <p>{{ service.rubric }}</p>
+        {% endif %}
         </div>
     </div>
     <div class="container">
-        <a href="{% url 'update' service.pk %}">Update</a> |
-        <a href="{% url 'delete' service.pk %}">Delete</a>
+        <a href="{% url 'update' service.pk %}" class="btn btn-secondary">Update</a>
+        <a href="{% url 'delete' service.pk %}" class="btn btn-secondary">Delete</a>
     </div>
-    <div class="container">
+    <div class="container mt-3">
         {% for comm in service.comments_set.all %}
-        <div>
-            <p>{{ comm.comment }}</p>
-            <p>{{ comm.date_created }}</p>
-            <p>{{ comm.user }}</p>
+        <div class="container bt-3 border">
+            <a href="{% url 'account' comm.user.pk %}">{{ comm.user }}</a>
+            <p class="mt-2">{{ comm.comment }}</p>
+            <span class="d-flex justify-content-end">{{ comm.date_created|date:'d.m.Y H:i:s' }}</span>
         </div>
         <br>
         {% endfor %}
     </div>
-    <div class="container">
+    <div class="container mt-3">
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="add comment">
+            <input type="submit" class="btn btn-secondary" value="add comment">
         </form>
     </div>
 {% endblock %}

@@ -13,21 +13,21 @@ class UserFormView(CreateView):
     form_class = CreateUserForm
     template_name = 'users/add.html'
 
-    # add user for group
-    def form_valid(self, form):
-        user = form.save()
-        if Group.objects.get(name='user'):
-            user.groups.add(Group.objects.get(name='user').pk)
-            user.save()
-            return super().form_valid(form)
-        else:
-            group = Group.objects.create(name='user')
-            user.groups.add(group)
-            user.save()
-            return super().form_valid(form)
+    # # add user for group
+    # def form_valid(self, form):
+    #     user = form.save()
+    #     if Group.objects.get(name='user'):
+    #         user.groups.add(Group.objects.get(name='user').pk)
+    #         user.save()
+    #         return super().form_valid(form)
+    #     else:
+    #         group = Group.objects.create(name='user')
+    #         user.groups.add(group)
+    #         user.save()
+    #         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('home')
+        return reverse('login')
 
 
 class UserLogIn(LoginView):

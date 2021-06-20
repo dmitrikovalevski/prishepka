@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+    {% for r in rubric %}
+        {{ r }} |
+    {% endfor %}
     {% for service in services %}
     <div class="container mt-4">
         <div class="d-flex position-relative mt-3">
@@ -14,9 +17,13 @@
             <p>{{ service.descriptions }}</p>
             <p>{{ service.price }}</p>
             <a href="{% url 'detail' service.pk %}" class="stretched-link">Подробнее</a>
+              {% if service.rubric %}
+              <span class="container d-flex justify-content-end">{{ service.rubric }} |
+                  {{ service.date_created|date:'d.m.Y H:i:s'}}
+              {% else %}
               <span class="container d-flex justify-content-end">
-                  {{ service.date_created.day }}.{{ service.date_created.month }}
-                  {{ service.date_created.hour }}:{{ service.date_created.minute }}
+                  {{ service.date_created|date:'d.m.Y H:i:s'}}
+              {% endif %}
               </span>
           </div>
         </div>

@@ -21,14 +21,14 @@
     {% endif %}
     </div>
       {% if not request.user.is_authenticated %}
-          <img src="" class="rounded-circle" height="42">
+          <img src="" height="42">
       {% elif not request.user.userinfo.image %}
          <a href="{% url 'account' request.user.id %}" class="d-block link-dark">
-           <img src="{% static 'image/user.png' %}" class="rounded-circle" height="42">
+           <img src="{% static 'image/user1.png' %}" height="42">
          <a href="{% url 'logout' %}" class="nav-link px-4 link-dark">Выход</a>
       {% else %}
          <a href="{% url 'account' request.user.id %}" class="d-block link-dark">
-           <img src="{{ request.user.userinfo.image.url }}" class="rounded-circle" height="42">
+           <img src="{{ request.user.userinfo.image.url }}" height="42">
          <a href="{% url 'logout' %}" class="nav-link px-4 link-dark">Выход</a>
       {% endif %}
       </a>
