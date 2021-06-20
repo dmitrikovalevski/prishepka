@@ -4,8 +4,8 @@ from django.shortcuts import reverse
 
 
 class UserInfo(models.Model):
-    image = models.ImageField(upload_to='user', null=True)
-    phone = models.CharField(max_length=20, null=True)
+    image = models.ImageField(upload_to='user', null=True, blank=True)
+    phone = models.CharField(max_length=20, null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
 
