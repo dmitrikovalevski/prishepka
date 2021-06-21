@@ -1,4 +1,4 @@
-from .models import Service, Comments, Rubric
+from .models import Service, Comments
 
 from django import forms
 
@@ -15,7 +15,3 @@ class CommentsForm(forms.ModelForm):
         fields = ['comment']
 
 
-class RubricForm(forms.ModelForm):
-    class Meta:
-        model = Rubric
-        fields = ['name']

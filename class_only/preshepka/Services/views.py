@@ -1,10 +1,9 @@
-from .models import Service, Comments, Rubric
+from .models import Service
 from .forms import CommentsForm
-from django.contrib.auth.models import User
+
 
 from django.urls import reverse
 from django.shortcuts import redirect
-from django.views.generic.edit import FormView, FormMixin
 from django.views.generic import (TemplateView, ListView, DetailView,
                                   CreateView, UpdateView, DeleteView,
                                   )
@@ -18,11 +17,6 @@ class ServiceListView(ListView):
     model = Service
     context_object_name = 'services'
     template_name = 'service/all_services.html'
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['rubric'] = Rubric.objects.all()
-        return context
 
 
 class ServiceDetailView(DetailView, CreateView):
@@ -89,15 +83,3 @@ class ServiceDeleteView(DeleteView):
     def get_success_url(self):
         return reverse('home')
 
-
-class RubricFormView(CreateView):
-    model = Rubric
-    fields = ['name']
-    template_name = 'service/add_service.html'
-
-    def get_success_url(self):
-        return redirect('home')
-
-    def form_valid(self, form):
-        form.save()
-        return self.get_success_url()

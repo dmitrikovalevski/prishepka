@@ -1,10 +1,11 @@
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.models import User
-from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, \
+    PasswordResetDoneView, PasswordResetCompleteView
+
 from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import CreateView, ListView, UpdateView, DetailView, FormView
+from django.views.generic import CreateView, DetailView
 from .forms import CreateUserForm, UserAccountUpdateForm
-from .models import UserInfo
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import Group
 

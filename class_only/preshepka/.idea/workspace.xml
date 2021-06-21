@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6d997c-ad18-4e01-97aa-acf6acb120a8" name="Default Changelist" comment="Всё работает. Хочу поменять поле зависимости с OneToOne на ForiengKey">
+      <change afterPath="$PROJECT_DIR$/Services/migrations/0008_auto_20210620_1937.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/service/5ac8234e23bbeb26180d838b_nJMdiho.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/add_rubric.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/all_services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/all_services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/delete_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/delete_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/account_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/account_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
