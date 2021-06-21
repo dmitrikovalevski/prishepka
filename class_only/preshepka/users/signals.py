@@ -19,10 +19,8 @@ def add_user_for_groups(instance, created, **kwargs):
         except:
             group = Group.objects.create(name='user')
             instance.groups.add(group)
-            print(f'Группа user создана. {instance} добавлен к группе user')
         else:
             instance.groups.add(group)
-            print(f'{instance} добавлен к группе user')
 
 
 

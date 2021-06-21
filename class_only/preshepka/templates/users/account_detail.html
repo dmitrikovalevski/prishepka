@@ -15,6 +15,26 @@
     {{ user.userinfo.phone }}<br>
     {% endif %}
     {{ user.email }}
-    <p><a type="button" class="btn btn-secondary mt-2" href="{% url 'account_update' %}">Редактировать</a></p>
+    <p><a type="button" class="btn btn-secondary mt-2" href="{% url 'account_update' %}">Редактировать профиль</a></p>
+</div>
+<div class="container">
+    {% for user_serv in user.service_set.all %}
+    <div class="container mt-4">
+    <div class="d-flex position-relative mt-3">
+      {% if user_serv.picture %}
+      <img src="{{ user_serv.picture.url }}" height="200" class="rounded mx-2">
+      {% endif %}
+      <div class="container border px-5">
+        <br>
+        <h5 class="mt-0">{{ user_serv.title }}</h5>
+        <p>{{ user_serv.descriptions }}</p>
+        <p>{{ user_serv.price }}</p>
+          <span class="container d-flex justify-content-end">
+              {{ service.date_created|date:'d.m.Y H:i:s'}}
+          </span>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
