@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6d997c-ad18-4e01-97aa-acf6acb120a8" name="Default Changelist" comment="Всё работает. Хочу поменять поле зависимости с OneToOne на ForiengKey">
+      <change afterPath="$PROJECT_DIR$/static/image/eye.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/service_id.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/service_id.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/users/account_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/account_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>

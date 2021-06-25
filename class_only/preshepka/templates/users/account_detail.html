@@ -21,20 +21,21 @@
     {% endif %}
 </div>
 <div class="container">
-    {% for user_serv in user.service_set.all %}
+    {% for service in owner_services %}
     <div class="container mt-4">
     <div class="d-flex position-relative mt-3">
-      {% if user_serv.picture %}
-      <img src="{{ user_serv.picture.url }}" height="200" class="rounded mx-2">
+      {% if service.picture %}
+      <img src="{{ service.picture.url }}" height="200" class="rounded mx-2">
       {% endif %}
       <div class="container border px-5">
         <br>
-        <h5 class="mt-0">{{ user_serv.title }}</h5>
-        <p>{{ user_serv.descriptions }}</p>
-        <p>{{ user_serv.price }}</p>
-          <span class="container d-flex justify-content-end">
-              {{ service.date_created|date:'d.m.Y H:i:s'}}
-          </span>
+        <h5 class="mt-0">{{ service.title }}</h5>
+        <p>{{ service.descriptions }}</p>
+        <p>{{ service.price }}</p>
+        <p><img src="{% static 'image/eye.png' %}" height="22">{{ service.count }}</p>
+        <span class="container d-flex justify-content-end">
+            {{ service.date_created|date:'d.m.Y H:i:s'}}
+        </span>
       </div>
     </div>
     </div>

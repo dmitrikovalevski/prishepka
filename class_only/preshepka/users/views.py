@@ -46,6 +46,8 @@ class UserAccountView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['owner'] = self.request.user.pk == self.kwargs['pk']
+        owner = User.objects.get(pk=self.kwargs['pk'])
+        context['owner_services'] = owner.service_set.order_by('-date_created')
         return context
 
 def update_user_account(request):
