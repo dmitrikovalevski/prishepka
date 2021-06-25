@@ -1,22 +1,28 @@
 from .models import Service
 from .forms import CommentsForm
 
-
 from django.urls import reverse
 from django.shortcuts import redirect
-from django.views.generic import (TemplateView, ListView, DetailView,
+from django.views.generic import (ListView, DetailView,
                                   CreateView, UpdateView, DeleteView,
                                   )
-
-
-class HomeTemplateView(TemplateView):
-    template_name = 'base.html'
 
 
 class ServiceListView(ListView):
     model = Service
     context_object_name = 'services'
     template_name = 'service/all_services.html'
+
+
+class SearchView(ListView):
+    model = Service
+    template_name = 'service/search_list.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user_request = self.request.GET.get('user_search')
+        context['list_result'] = Service.objects.filter(title__contains=user_request)
+        return context
 
 
 class ServiceDetailView(DetailView, CreateView):
@@ -83,4 +89,3 @@ class ServiceDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('home')
-

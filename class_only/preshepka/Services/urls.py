@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (ServiceListView, ServiceDetailView,
                     ServiceCreateView, ServiceUpdateView,
-                    ServiceDeleteView)
+                    ServiceDeleteView, SearchView)
 
 urlpatterns = [
     path('', ServiceListView.as_view(), name='home'),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('detail/<int:pk>/update/', ServiceUpdateView.as_view(), name='update'),
     path('detail/<int:pk>/delete/', ServiceDeleteView.as_view(), name='delete'),
     path('add_service/', ServiceCreateView.as_view(), name='add_service'),
+    path('search_result/', SearchView.as_view(), name='search'),
 ]

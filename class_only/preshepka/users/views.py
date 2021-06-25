@@ -7,25 +7,11 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import CreateView, DetailView
 from .forms import CreateUserForm, UserAccountUpdateForm, UpdateUserForm
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import Group
 
 
 class UserFormView(CreateView):
     form_class = CreateUserForm
     template_name = 'users/add.html'
-
-    # # add user for group
-    # def form_valid(self, form):
-    #     user = form.save()
-    #     if Group.objects.get(name='user'):
-    #         user.groups.add(Group.objects.get(name='user').pk)
-    #         user.save()
-    #         return super().form_valid(form)
-    #     else:
-    #         group = Group.objects.create(name='user')
-    #         user.groups.add(group)
-    #         user.save()
-    #         return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('login')
@@ -50,11 +36,12 @@ class UserAccountView(DetailView):
         context['owner_services'] = owner.service_set.order_by('-date_created')
         return context
 
+
 def update_user_account(request):
     # update user profile
     if request.method == 'POST':
         user_info = UserAccountUpdateForm(request.POST, request.FILES,
-                                     instance=request.user.userinfo)
+                                          instance=request.user.userinfo)
         user = UpdateUserForm(request.POST, instance=request.user)
         if user_info.is_valid() and user.is_valid():
             form = user_info.save()
