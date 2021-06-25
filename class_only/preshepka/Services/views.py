@@ -35,6 +35,7 @@ class ServiceDetailView(DetailView, CreateView):
             service.count += 1
             service.save()
         context['count'] = Service.objects.get(pk=self.kwargs['pk']).count
+        context['owner'] = self.request.user == service_user
         return context
 
     # Comment form

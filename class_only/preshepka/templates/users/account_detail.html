@@ -16,7 +16,9 @@
     <p>{{ user.userinfo.phone }}</p>
     {% endif %}
     <p>{{ user.email }}</p>
+    {% if owner %}
     <p><a type="button" class="btn btn-secondary mt-2" href="{% url 'account_update' %}">Редактировать профиль</a></p>
+    {% endif %}
 </div>
 <div class="container">
     {% for user_serv in user.service_set.all %}

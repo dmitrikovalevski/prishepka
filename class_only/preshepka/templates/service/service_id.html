@@ -21,7 +21,7 @@
       </div>
     </div>
 </div>
-{% if service.user %}
+{% if owner %}
 <div class="container mt-3">
     <a href="{% url 'update' service.pk %}" class="btn btn-secondary">Update</a>
     <a href="{% url 'delete' service.pk %}" class="btn btn-secondary">Delete</a>

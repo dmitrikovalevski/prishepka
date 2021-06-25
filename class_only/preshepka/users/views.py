@@ -43,6 +43,10 @@ class UserAccountView(DetailView):
     model = User
     template_name = 'users/account_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['owner'] = self.request.user.pk == self.kwargs['pk']
+        return context
 
 def update_user_account(request):
     # update user profile
