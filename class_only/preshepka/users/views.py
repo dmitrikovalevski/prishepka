@@ -5,7 +5,7 @@ from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmVie
 
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import CreateView, DetailView
-from .forms import CreateUserForm, UserAccountUpdateForm
+from .forms import CreateUserForm, UserAccountUpdateForm, UpdateUserForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import Group
 
@@ -47,17 +47,21 @@ class UserAccountView(DetailView):
 def update_user_account(request):
     # update user profile
     if request.method == 'POST':
-        form = UserAccountUpdateForm(request.POST, request.FILES,
+        user_info = UserAccountUpdateForm(request.POST, request.FILES,
                                      instance=request.user.userinfo)
-        if form.is_valid():
-            form = form.save()
+        user = UpdateUserForm(request.POST, instance=request.user)
+        if user_info.is_valid() and user.is_valid():
+            form = user_info.save()
             form.user = request.user
             form.save()
+            user.save()
             return redirect('account', request.user.id)
     else:
-        form = UserAccountUpdateForm(instance=request.user.userinfo)
+        user_info = UserAccountUpdateForm(instance=request.user.userinfo)
+        user = UpdateUserForm(instance=request.user)
     context = {
-        'form': form
+        'user_info': user_info,
+        'user': user,
     }
     return render(request, 'users/account_update.html', context)
 
