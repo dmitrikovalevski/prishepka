@@ -31,7 +31,6 @@ class ServiceDetailView(DetailView, CreateView):
     template_name = 'service/service_id.html'
     form_class = CommentsForm
 
-    # Get Service count
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         service_user = Service.objects.get(pk=self.kwargs['pk']).user
