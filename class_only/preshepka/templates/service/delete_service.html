@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Удалить услугу{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Вы действительно хотите удалить?</p>
+        <h2><p>"{{ object }}"</p></h2>
+        <input type="submit" class="btn btn-secondary" value="Confirm">
+    </form>
+</div>
+{% endblock %}

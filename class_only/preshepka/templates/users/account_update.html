@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{{ user.first_name }}</p>
+        <p>{{ user.last_name }}</p>
+        <p>{{ user_info.image }}</p>
+        <p>{{ user_info.phone }}</p>
+        <input type="submit" class="btn btn-secondary" value="Отправить">
+    </form>
+</div>
+{% endblock %}

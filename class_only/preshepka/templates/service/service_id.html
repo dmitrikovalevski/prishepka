@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ service.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex position-relative mt-3">
+      {% if service.picture %}
+      <img src="{{ service.picture.url }}" height="200" class="rounded">
+      {% endif %}
+      <div class="container border px-5">
+        <br>
+        <h5 class="mt-0">{{ service.title }}</h5>
+        <p>{{ service.descriptions }}</p>
+        <p>{{ service.price }}</p>
+        <p><a href="{% url 'account' service.user.pk %}">{{ service.user }}</a></p>
+          <span class="container d-flex justify-content-end">
+              {{ service.date_created|date:'d.m.Y H:i:s'}}
+          </span>
+      </div>
+    </div>
+</div>
+{% if owner %}
+<div class="container mt-3">
+    <a href="{% url 'update' service.pk %}" class="btn btn-secondary">Update</a>
+    <a href="{% url 'delete' service.pk %}" class="btn btn-secondary">Delete</a>
+{% endif %}
+</div>
+<div class="container mt-3">
+    {% for comm in service.comments_set.all %}
+    <div class="container bt-3 border">
+        {% if comm.user.userinfo.image %}
+        <img src="{{ comm.user.userinfo.image.url }}" height="25">
+        {% else %}
+        <img src="{% static 'image/user1.png' %}" height="25">
+        {% endif %}
+        <a href="{% url 'account' comm.user.pk %}">{{ comm.user }}</a>
+        <p class="mt-2">{{ comm.comment }}</p>
+        <p class="d-flex justify-content-end">{{ comm.date_created|date:'d.m.Y H:i:s' }}</p>
+    </div>
+    <br>
+    {% endfor %}
+</div>
+<div class="container mt-3">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-secondary" value="add comment">
+    </form>
+</div>
+{% endblock %}
