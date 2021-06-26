@@ -10,8 +10,12 @@ from django.views.generic import (ListView, DetailView,
 
 class ServiceListView(ListView):
     model = Service
-    context_object_name = 'services'
     template_name = 'service/all_services.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['services'] = Service.objects.order_by('-date_created')
+        return context
 
 
 class SearchView(ListView):
