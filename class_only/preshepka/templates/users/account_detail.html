@@ -20,6 +20,7 @@
     <p><a type="button" class="btn btn-secondary mt-2" href="{% url 'account_update' %}">Редактировать профиль</a></p>
     {% endif %}
 </div>
+    {% if owner %}
 <div class="container">
     {% for service in owner_services %}
     <div class="container mt-4">
@@ -41,4 +42,5 @@
     </div>
     {% endfor %}
 </div>
+    {% endif %}
 {% endblock %}
