@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Account{% endblock %}
 
 {% block content %}
 <div class="container">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" class="uniForm">
         {% csrf_token %}
-        <p>{{ user.first_name }}</p>
-        <p>{{ user.last_name }}</p>
-        <p>{{ user_info.image }}</p>
-        <p>{{ user_info.phone }}</p>
+        {{ user|crispy }}
+        {{ user_info|crispy}}
         <input type="submit" class="btn btn-secondary" value="Отправить">
     </form>
 </div>

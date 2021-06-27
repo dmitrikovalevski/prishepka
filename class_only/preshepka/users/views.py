@@ -61,16 +61,16 @@ def update_user_account(request):
 
 # reset password
 class PasswordReset(PasswordResetView):
-    pass
-
-
-class PasswordResetConfirm(PasswordResetConfirmView):
-    pass
+    template_name = 'registration/reset_form.html'
 
 
 class PasswordResetDone(PasswordResetDoneView):
-    pass
+    template_name = 'registration/reset_done.html'
+
+
+class PasswordResetConfirm(PasswordResetConfirmView):
+    template_name = 'registration/reset_confirm.html'
 
 
 class PasswordResetComplete(PasswordResetCompleteView):
-    pass
+    template_name = 'registration/reset_complete.html'
