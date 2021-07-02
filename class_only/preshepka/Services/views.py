@@ -1,5 +1,5 @@
 from .models import Service
-from .forms import CommentsForm
+from .forms import CommentsForm, ServiceForm
 
 from django.urls import reverse
 from django.shortcuts import redirect
@@ -62,7 +62,8 @@ class ServiceDetailView(DetailView, CreateView):
 
 class ServiceCreateView(CreateView):
     model = Service
-    fields = ['picture', 'title', 'descriptions', 'price']
+    form_class = ServiceForm
+    # fields = ['picture', 'title', 'descriptions', 'price']
     template_name = 'service/add_service.html'
 
     def get_success_url(self):

@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'Services.apps.ServicesConfig',
 ]
 
-CRISPY_TEMPLATE_PACK = 'uni_form'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

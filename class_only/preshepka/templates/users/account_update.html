@@ -5,11 +5,15 @@
 
 {% block content %}
 <div class="container">
-    <form method="POST" enctype="multipart/form-data" class="uniForm">
-        {% csrf_token %}
-        {{ user|crispy }}
-        {{ user_info|crispy}}
-        <input type="submit" class="btn btn-secondary" value="Отправить">
-    </form>
+    <div class="row">
+        <div class="col-md-3 mt-2">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ user|crispy }}
+                {{ user_info|crispy}}
+                <input type="submit" class="btn btn-secondary mt-2" value="Отправить">
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

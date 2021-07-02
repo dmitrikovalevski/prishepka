@@ -23,8 +23,8 @@
 </div>
 {% if owner %}
 <div class="container mt-3">
-    <a href="{% url 'update' service.pk %}" class="btn btn-secondary">Update</a>
-    <a href="{% url 'delete' service.pk %}" class="btn btn-secondary">Delete</a>
+    <a href="{% url 'update' service.pk %}" class="btn btn-secondary">Редактировать</a>
+    <a href="{% url 'delete' service.pk %}" class="btn btn-secondary">Удалить</a>
 {% endif %}
 </div>
 <div class="container mt-3">
@@ -43,10 +43,14 @@
     {% endfor %}
 </div>
 <div class="container mt-3">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" class="btn btn-secondary" value="add comment">
-    </form>
+    <div class="row">
+        <div class="col-md-4 mt-2">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-secondary" value="add comment">
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
