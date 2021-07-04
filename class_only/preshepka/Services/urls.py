@@ -1,7 +1,15 @@
+# Пути
 from django.urls import path
-from .views import (ServiceListView, ServiceDetailView,
-                    ServiceCreateView, ServiceUpdateView,
-                    ServiceDeleteView, SearchView)
+
+# Представления
+from .views import (
+    ServiceListView,
+    ServiceDetailView,
+    ServiceCreateView,
+    ServiceUpdateView,
+    ServiceDeleteView,
+    SearchView,
+)
 
 urlpatterns = [
     path('', ServiceListView.as_view(), name='home'),

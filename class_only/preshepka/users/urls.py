@@ -1,9 +1,20 @@
+# Пути
 from django.urls import path
 
-from .views import UserFormView, UserLogIn, UserLogOut, \
-    PasswordReset, PasswordResetConfirm, \
-    PasswordResetDone, PasswordResetComplete, \
-    UserAccountView, update_user_account
+# Предаствления
+from .views import (
+    # Классы
+    UserFormView,
+    UserLogIn,
+    UserLogOut,
+    PasswordReset,
+    PasswordResetConfirm,
+    PasswordResetDone,
+    PasswordResetComplete,
+    UserAccountView,
+    # Функция
+    update_user_account,
+)
 
 urlpatterns = [
     path('add/', UserFormView.as_view(), name='add_user'),
