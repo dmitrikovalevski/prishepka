@@ -1,3 +1,4 @@
+<!-- Шаблон для отображения информации сервиса -->
 {% extends 'base.html' %}
 {% load static %}
 
@@ -6,6 +7,7 @@
 {% block content %}
 <div class="container mt-4">
     <div class="d-flex position-relative mt-3">
+    <!-- Если есть картинка, тогда отобразить её -->
       {% if service.picture %}
       <img src="{{ service.picture.url }}" height="200" class="rounded">
       {% endif %}
@@ -21,34 +23,47 @@
       </div>
     </div>
 </div>
+
+<!-- Если на страницу услуги зашел владелец этой услуги,
+     тогда отобразить ему кнопки для редактирования и удаления услуги-->
 {% if owner %}
 <div class="container mt-3">
     <a href="{% url 'update' service.pk %}" class="btn btn-secondary">Редактировать</a>
     <a href="{% url 'delete' service.pk %}" class="btn btn-secondary">Удалить</a>
-{% endif %}
 </div>
+{% endif %}
+
+<!-- Контейнер отображения комментариев услуги -->
 <div class="container mt-3">
+
+    <!-- Отображение всех комментариев циклом -->
     {% for comm in service.comments_set.all %}
     <div class="container bt-3 border">
+
+        <!-- Отображение аватарки пользователя -->
         {% if comm.user.userinfo.image %}
         <img src="{{ comm.user.userinfo.image.url }}" height="25">
+        <!-- Если аватарка не установленна, отобразить базовое изображение -->
         {% else %}
         <img src="{% static 'image/user1.png' %}" height="25">
         {% endif %}
+
         <a href="{% url 'account' comm.user.pk %}">{{ comm.user }}</a>
         <p class="mt-2">{{ comm.comment }}</p>
         <p class="d-flex justify-content-end">{{ comm.date_created|date:'d.m.Y H:i:s' }}</p>
     </div>
-    <br>
     {% endfor %}
+    <br>
 </div>
+
+<!-- Форма для комментария -->
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-4 mt-2">
             <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input type="submit" class="btn btn-secondary" value="add comment">
+                <input type="submit" class="btn btn-secondary" value="Добавить комментарий">
             </form>
         </div>
     </div>

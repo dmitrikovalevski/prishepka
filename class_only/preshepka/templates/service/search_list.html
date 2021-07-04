@@ -1,11 +1,13 @@
+<!-- Шаблон для отображения поиска -->
 {% extends 'base.html' %}
 
 {% block title %}Результаты поиска{% endblock %}
 
 {% block content %}
-    {% for service in list_result %}
-    <div class="container mt-4">
+{% for service in list_result %}
+<div class="container mt-4">
     <div class="d-flex position-relative mt-3">
+    <!-- Если есть картинка, тогда отобразить -->
       {% if service.picture %}
       <img src="{{ service.picture.url }}" height="200" class="rounded">
       {% endif %}
@@ -20,6 +22,6 @@
           </span>
       </div>
     </div>
-    </div>
-    {% endfor %}
+</div>
+{% endfor %}
 {% endblock %}
