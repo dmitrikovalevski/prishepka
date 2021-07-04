@@ -2,28 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6d997c-ad18-4e01-97aa-acf6acb120a8" name="Default Changelist" comment="Всё работает. Хочу поменять поле зависимости с OneToOne на ForiengKey">
-      <change afterPath="$PROJECT_DIR$/media/service/iStock-657351588.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/logged_out.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/reset_complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/reset_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/reset_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/reset_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/add_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/add_service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/all_services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/all_services.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/delete_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/delete_service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/search_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/search_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/service_id.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/service_id.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/update_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/update_service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/account_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/account_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/account_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/account_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/1433082298_kleim-oboi-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3_UmOIgT7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3_YqWbOTL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/1505898120166427819.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/1505898120166427819_insQ0XM.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/15130855274k8ng.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/511SKDnmulL._SX322_BO1204203200_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/511SKDnmulL._SX322_BO1204203200__ZnqWcVU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/511SKDnmulL._SX322_BO1204203200__bKyGwSb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/5ac8234e23bbeb26180d838b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/5ac8234e23bbeb26180d838b_CTsxBAr.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/5ac8234e23bbeb26180d838b_TQSxSZj.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/5ac8234e23bbeb26180d838b_nJMdiho.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/5ac8234e23bbeb26180d838b_oikiy8q.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/6c474561-f040-43a4-87c8-1ae32f09c22a_1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/853e0628b0d55ca7fba4fd6e8f31.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/9d0bc4cad0634699fc6afc68f45672f4.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/9d0bc4cad0634699fc6afc68f45672f4_SH3krMG.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/9d0bc4cad0634699fc6afc68f45672f4_gL1oUvH.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/FdqCklxzYc0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/FdqCklxzYc0_yvQq6QU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/iStock-657351588.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/images.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/mal.2pBM3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/mal.2pBM3_f9FtjUb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/mal.2pBM3_qtbZ9Kt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/multimodalnaya-perevozka-gruza.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/multimodalnaya-perevozka-gruza_XKFyJgz.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/multimodalnaya-perevozka-gruza_ecWa21d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/pochemu-sushi-vredny-dlja-figury_1590677088981164064.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/pochemu-sushi-vredny-dlja-figury_1590677088981164064_Rgi5obE.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/pochemu-sushi-vredny-dlja-figury_1590677088981164064_ggN8ox8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/stroitelstvo-domov-grodno.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/stroitelstvo-domov-grodno_UcGM8om.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/Автомобильные-перевозки.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/service/Автомобильные-перевозки_L8WeLZO.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3_9TdcmCq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3_DFDkwcL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3_oyGIX9E.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3_s4dfGjg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/511SKDnmulL._SX322_BO1204203200_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/511SKDnmulL._SX322_BO1204203200__1KxxS22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/511SKDnmulL._SX322_BO1204203200__lRPDjcg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/5ac8234e23bbeb26180d838b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/fil-158d3_src---jpg_600x360_center_whitepadding10_63655_convert.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/service/fil-158d3_src---jpg_600x360_center_whitepadding10_63655_convert.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/user/iStock-657351588.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
