@@ -1,17 +1,13 @@
-from .models import Service, Comments
+# Модели
+from .models import Comments
 
+# Инструмент Django для создания форм
 from django import forms
 
 
-class ServiceForm(forms.ModelForm):
-    class Meta:
-        model = Service
-        fields = ['picture', 'title', 'descriptions', 'price', 'user']
-
+# Форма для комментария
 
 class CommentsForm(forms.ModelForm):
     class Meta:
         model = Comments
         fields = ['comment']
-
-

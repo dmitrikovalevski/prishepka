@@ -1,4 +1,7 @@
+# Инструмент Django для создании модели
 from django.db import models
+
+# Модель пользователя
 from django.contrib.auth.models import User
 
 

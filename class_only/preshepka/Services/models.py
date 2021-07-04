@@ -1,7 +1,11 @@
+# Инструмент Django для моделей
 from django.db import models
+
+# Модель пользователя
 from django.contrib.auth.models import User
 
 
+# Модель услуги
 class Service(models.Model):
     picture = models.ImageField(upload_to='service', null=True, blank=True)
     title = models.CharField(max_length=200)
@@ -15,6 +19,7 @@ class Service(models.Model):
         return self.title
 
 
+# Модель комментария
 class Comments(models.Model):
     comment = models.TextField()
     date_created = models.DateTimeField(auto_now=True)
@@ -23,4 +28,3 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.comment
-
