@@ -39,8 +39,10 @@ class SearchView(ListView):
     # Метод класса, который выведет услуги по запросу пользователя
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
+
         # Принимаем запрос из строки поиска
         user_request = self.request.GET.get('user_search')
+
         # Формируем контекст по запросу.
         context['list_result'] = Service.objects.filter(title__icontains=user_request)
         return context
@@ -55,15 +57,22 @@ class ServiceDetailView(DetailView, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         # В переменную получаем владельца услуги
         service_user = Service.objects.get(pk=self.kwargs['pk']).user
+
         # Если услугу просмотривает не владелец услуги, тогда прибавим 1 к счётчику
         if not self.request.user == service_user:
             service = Service.objects.get(pk=self.kwargs['pk'])
             service.count += 1
             service.save()
+
         # Получим контекст счётчика просмотров
         context['count'] = Service.objects.get(pk=self.kwargs['pk']).count
+
+        # Только зарегистрированный пользователь может оставить комментарий
+        context['perm_for_comment'] = self.request.user.is_authenticated
+
         # Получим переменную для доступа к редактированию и удалению услуги.
         # Доступ к этим действиям получит только владелец услуги.
         context['owner'] = self.request.user == service_user
@@ -72,12 +81,16 @@ class ServiceDetailView(DetailView, CreateView):
     # Сохранение формы комментария
     def form_valid(self, form):
         comment = form.save()
+
         # Проверка на регистрацию пользователя
         if self.request.user.is_authenticated:
+
             # Привязка комментария к пользователю
             comment.user = self.request.user
+
             # Привязка комментария к услуге
             comment.service = Service.objects.get(pk=self.kwargs['pk'])
+
             # Сохранение формы
             comment.save()
         return self.get_success_url()
@@ -100,8 +113,10 @@ class ServiceCreateView(CreateView):
     # Проверка на валидность
     def form_valid(self, form):
         service = form.save(commit=False)
+
         # Только зарегистрированный пользователь может оставить комментарий
         if self.request.user.is_authenticated:
+
             # Привязка пользователя к услуге
             service.user = self.request.user
             service.save()
