@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+from run_secret import *
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-hfyrtw8665kdf;pinsecure-8a)(ne=t+2ciz_w9u8kagmmwz(t&75dta)fww3g-rb))t%s(9#"
+SECRET_KEY = RUN_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -134,13 +136,13 @@ STATICFILES_DIRS = [
 ]
 
 # change password
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_BACKEND = RUN_EMAIL_BACKEND
+EMAIL_HOST = RUN_EMAIL_HOST
+EMAIL_PORT = RUN_EMAIL_PORT
+EMAIL_USE_TLS = RUN_EMAIL_USE_TLS
 
-EMAIL_HOST_USER = 'iamdjangotest@gmail.com'
-EMAIL_HOST_PASSWORD = 'ITacademy306'
+EMAIL_HOST_USER = RUN_EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = RUN_EMAIL_HOST_PASSWORD
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
