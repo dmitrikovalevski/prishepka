@@ -29,9 +29,17 @@ def create_userinfo(instance, created, **kwargs):
 def add_user_for_groups(instance, created, **kwargs):
     if created:
         try:
+
+            # Если группа существует добавть её в переменную
             group = Group.objects.get(name='user')
         except:
+
+            # Если группы нету, создать её
             group = Group.objects.create(name='user')
+
+            # Добавть пользователя к группе
             instance.groups.add(group)
         else:
+
+            # Добавть пользователя к группе
             instance.groups.add(group)

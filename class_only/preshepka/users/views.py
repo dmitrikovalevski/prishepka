@@ -78,6 +78,7 @@ class UserAccountView(DetailView):
 
 # Функция редактирования информиции пользователя
 def update_user_account(request):
+
     # Проверка метода
     if request.method == 'POST':
 
@@ -98,6 +99,7 @@ def update_user_account(request):
             user.save()
             return redirect('account', request.user.id)
     else:
+
         # Если ничего не случилось или проверка на валидность не прошла,
         # вернёт пользователю начальные формы для заполнения.
         user_info = UserAccountUpdateForm(instance=request.user.userinfo)

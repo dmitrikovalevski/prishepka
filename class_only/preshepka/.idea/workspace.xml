@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6d997c-ad18-4e01-97aa-acf6acb120a8" name="Default Changelist" comment="Всё работает. Хочу поменять поле зависимости с OneToOne на ForiengKey">
-      <change afterPath="$PROJECT_DIR$/media/service/1488399659_0_0_960_960_600x0_80_0_1_e38b72053fffa5d3d7e82d2fe116f0b3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/15130855274k8ng.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/5ac8234e23bbeb26180d838b.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/article_big_500441568027628.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/stroitelstvo-domov-grodno.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/service/Автомобильные-перевозки.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/user/iStock-657351588.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_secret.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preshepka/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/preshepka/settings.py" afterDir="false" />
     </list>
