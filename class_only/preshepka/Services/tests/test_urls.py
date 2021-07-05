@@ -3,6 +3,9 @@ from Services.models import Service
 
 
 class ServiceUrlTest(TestCase):
+    '''
+    Все тетсты проверят действуют ли указанные в тестах пути
+    '''
 
     def setUp(self):
         self.client = Client()

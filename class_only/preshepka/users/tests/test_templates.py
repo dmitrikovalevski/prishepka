@@ -1,14 +1,12 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
-from users.views import update_user_account
-from users.models import UserInfo
-from users.forms import UserAccountUpdateForm, UpdateUserForm
-from django.db.models import signals
-from users.signals import create_userinfo
 
 
 class UserTemplatesTest(TestCase):
+    '''
+    Все тесты проверяют правильно ли указаны шаблоны
+    '''
 
     def setUp(self):
         self.client = Client()

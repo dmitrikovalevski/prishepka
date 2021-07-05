@@ -4,6 +4,9 @@ from django.urls import reverse
 
 
 class UserResetPasswordUrlTest(TestCase):
+    '''
+    Все тесты проверяют правильно ли указаны пути для смены пароля
+    '''
 
     def setUp(self):
         self.client = Client()

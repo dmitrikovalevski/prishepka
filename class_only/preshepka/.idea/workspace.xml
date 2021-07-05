@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1c6d997c-ad18-4e01-97aa-acf6acb120a8" name="Default Changelist" comment="Всё работает. Хочу поменять поле зависимости с OneToOne на ForiengKey">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preshepka/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/preshepka/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/tests/test_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/tests/test_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/tests/test_templates.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/tests/test_templates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/tests/test_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/tests/test_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/tests/test_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests/test_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/tests/test_reset_password_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests/test_reset_password_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/tests/test_templates.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests/test_templates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/tests/test_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests/test_urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

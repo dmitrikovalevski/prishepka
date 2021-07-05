@@ -12,17 +12,18 @@ class UserModelTest(TestCase):
             password='test_password',
             email='test@mail.com'
         )
-        # При создании пользваталется в setUp() с помощью сигнала
-        # self.user привязывается к UserInfo()
 
+    # Проверим привязывается ли UserInfo модель к User
     def test_add_user_to_userinfo(self):
         self.assertEqual(self.user.username, self.user.userinfo.user.username)
 
+    # Проверим соответствуют ли заполненые поля полям созданной модели
     def test_check_user_fields(self):
         self.assertEqual(self.user.username, 'test_user')
         self.assertEqual(self.user.password, 'test_password')
         self.assertEqual(self.user.email, 'test@mail.com')
 
+    # Убедимся что пользователь создаётся
     def test_create_user(self):
         response = self.client.post(reverse('add_user'), {
             'username': 'new_user',

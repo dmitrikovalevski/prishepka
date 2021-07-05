@@ -19,16 +19,19 @@ class ServiceModelTest(TestCase):
             user=self.user
         )
 
+    # Если возьмёт вызовем объект он нам вернёт __str__метод
     def test_service_string_method(self):
         service = Service.objects.get(pk='1')
         self.assertEqual(service.title, 'test_title')
 
+    # Проверим все ли поля модели заполнены
     def test_service_fields_content_exist(self):
         self.assertEqual(self.service.title, 'test_title')
         self.assertEqual(self.service.descriptions, 'test_descriptions')
         self.assertEqual(self.service.price, '100')
         self.assertEqual(self.service.user, self.user)
 
+    # Если пользователь перейдёт по ссылке то увидит контент
     def test_service_content_is_exist_in_view(self):
         self.client.login(
             username='test_user',
@@ -40,6 +43,8 @@ class ServiceModelTest(TestCase):
         self.assertContains(response, '100')
         self.assertContains(response, self.user)
 
+    # Создадим новую услугу и перейдём по перенаправлению.
+    # Проверим на наличие новго контента.
     def test_create_service(self):
         self.client.login(
             username='test_user',
@@ -57,6 +62,7 @@ class ServiceModelTest(TestCase):
         self.assertContains(response, '500')
         self.assertContains(response, self.user)
 
+    # Проверим обновляется ли наша услуга
     def test_update_service(self):
         response = self.client.post('/detail/1/update', {
             'title': 'update new title',

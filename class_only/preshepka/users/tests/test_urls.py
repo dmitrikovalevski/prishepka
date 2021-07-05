@@ -4,6 +4,9 @@ from django.urls import reverse
 
 
 class UserUrlTest(TestCase):
+    '''
+    Проверим правильно ли указаны пути
+    '''
 
     def setUp(self):
         self.client = Client()
