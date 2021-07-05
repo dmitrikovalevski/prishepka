@@ -1,5 +1,3 @@
-from django.utils.datastructures import MultiValueDict
-
 # Перенаправление
 from django.urls import reverse
 
@@ -67,9 +65,11 @@ class UserAccountView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         # Переменная, которая позволяет видеть пользователю только свои услуги
         # в своём кабинете.
         context['owner'] = self.request.user.pk == self.kwargs['pk']
+
         # Услуги пользователя, которые сортируются по дате
         owner = User.objects.get(pk=self.kwargs['pk'])
         context['owner_services'] = owner.service_set.order_by('-date_created')
