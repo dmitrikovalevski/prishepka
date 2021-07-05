@@ -5,6 +5,9 @@ from Services.models import Service
 
 
 class ServiceTemplateTest(TestCase):
+    '''
+   Все тесты проверяют правильно ли указаны шаблоны
+    '''
 
     def setUp(self):
         self.client = Client()
