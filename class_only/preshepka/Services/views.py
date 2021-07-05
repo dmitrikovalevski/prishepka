@@ -124,6 +124,13 @@ class ServiceDeleteView(DeleteView):
     model = Service
     template_name = 'service/delete_service.html'
 
+    # При удалении услуги удаляется так же картинка из папки "MEDIA"
+    def delete(self, request, *args, **kwargs):
+        service_for_delete = Service.objects.get(pk=self.kwargs['pk'])
+        service_for_delete.picture.delete()
+        service_for_delete.delete()
+        return redirect(self.get_success_url())
+
     # После подтверждения удаления вернёт на главную страницу
     def get_success_url(self):
         return reverse('home')

@@ -65,9 +65,11 @@ class UserAccountView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         # Переменная, которая позволяет видеть пользователю только свои услуги
         # в своём кабинете.
         context['owner'] = self.request.user.pk == self.kwargs['pk']
+
         # Услуги пользователя, которые сортируются по дате
         owner = User.objects.get(pk=self.kwargs['pk'])
         context['owner_services'] = owner.service_set.order_by('-date_created')
@@ -78,10 +80,16 @@ class UserAccountView(DetailView):
 def update_user_account(request):
     # Проверка метода
     if request.method == 'POST':
+
         # Формы, которые принимают ифнормацию которую отсылает пользователь
         user_info = UserAccountUpdateForm(request.POST, request.FILES,
                                           instance=request.user.userinfo)
         user = UpdateUserForm(request.POST, instance=request.user)
+
+        # Если пользователь сменит аватарку, старая картинка будет удалена из папки "MEDIA"
+        if request.FILES:
+            request.user.userinfo.image.delete()
+
         # Проверка на валидность и сохранение форм
         if user_info.is_valid() and user.is_valid():
             form = user_info.save()
